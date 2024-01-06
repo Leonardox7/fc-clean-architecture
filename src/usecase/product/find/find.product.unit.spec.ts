@@ -15,8 +15,7 @@ const MockRepository = () => {
 describe('Unit test find product use case', () => {
   test('should find a product', async () => {
     const usecase = new FindProductUseCase(MockRepository());
-    const input = { id: '1' };
-    const output = await usecase.execute(input);
+    const output = await usecase.execute({ id: '1' });
 
     expect(output).toEqual({
       id: '1',
