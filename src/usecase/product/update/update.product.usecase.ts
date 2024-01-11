@@ -15,12 +15,11 @@ export default class UpdateProductUseCase {
         if (input.price) productToBeUpdated.changePrice(input.price)
 
         await this.productRepository.update(productToBeUpdated)
-        const productUpdated = await this.productRepository.find(input.id)
 
         return {
-            id: productUpdated.id,
-            name: productUpdated.name,
-            price: productUpdated.price
+            id: input.id,
+            name: input.name,
+            price: input.price
         }
     }
 }
